@@ -1,4 +1,11 @@
-To build this project, simply use the included GNU makefile.  
+This is a raytracer that I implemented as a homework assignment for one of my classes. However, I added a few features that were beyond the scope of the assignment (such as multithreaded rendering and a real-time UI).  
+The original repo is also on my github, but it's a private repository because it contains details about the specific class this assignment was for (and I'd rather not have any students in that class copying my solution).  
+  
+---
+  
+To build this project, use the included GNU makefile.  
+  
+---
   
 To create scene objects, modify the make_scene function in render.c.  
   
@@ -50,6 +57,7 @@ For moving the camera, modify the function setup_camera in render.c.
   
 The function for moving the camera is camera_move. Its signature is ```void camera_move (camera* cam, v3* position, v3* rotation);```  
   
+---
   
 I've also included an interactive version, which can be built by building Makefile_interactive with GNUMake (Windows only, must be built with MinGW).
 The interactive version has additional dependencies. These are:  
@@ -66,6 +74,7 @@ The controls for the interactive version are as follows:
 	  
 Command line arguments can also be used to configure the output render on the interactive version.  
   
+---
   
 The executable has several command-line arguments to adjust certain parameters. Alternatively, you can change the default parameters in render_args.h.  
   
