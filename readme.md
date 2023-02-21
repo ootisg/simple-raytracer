@@ -25,7 +25,7 @@ Signature for material_init_specular: ```material* material_init_specular (void*
 	- falloff is the same as material_init.  
 	- fuzz is the "fuzz" factor of the specular material.  
   
-Signature for material_init_specular: ```material* material_init_dielectric (void* loc, uint32_t color, double falloff, double refractive_index)```  
+Signature for material_init_dielectric: ```material* material_init_dielectric (void* loc, uint32_t color, double falloff, double refractive_index)```  
 	- loc is the same as material_init.  
 	- color is the same as material_init.  
 	- falloff is the same as material_init.  
