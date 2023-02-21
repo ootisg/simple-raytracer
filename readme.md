@@ -14,38 +14,38 @@ To create a material, use material_init, material_init_specular, or material_ini
 Note: Emissive materials are implemented, but they're a little broken and I haven't included documentation on them here. You can try to mess with them if you want though.
   
 Signature for material_init: ```material* material_init (void* loc, uint32_t color, double falloff, void (*bounce_ray) (collision_info*, collision_info*, void*, uint64_t*))```  
-	loc is the pointer to initialize the material at.  
-	color is the color of the material, in ARGB format (alpha channel is unused though, so it's just RGB on the low 24 bits)  
-	falloff is a constant that controls the material's color contribution to rays that collide with it. I use .3 to .7 for diffuse materials, and .95 to 1.0 for specular materials.  
-	bounce_ray is the ray bouncing function. Three ray bounce functions are defined in material.h: bounce_none, bounce_diffuse, and bounce_specular.  
+	- loc is the pointer to initialize the material at.  
+	- color is the color of the material, in ARGB format (alpha channel is unused though, so it's just RGB on the low 24 bits)  
+	- falloff is a constant that controls the material's color contribution to rays that collide with it. I use .3 to .7 for diffuse materials, and .95 to 1.0 for specular materials.  
+	- bounce_ray is the ray bouncing function. Three ray bounce functions are defined in material.h: bounce_none, bounce_diffuse, and bounce_specular.  
 	  
 Signature for material_init_specular: ```material* material_init_specular (void* loc, uint32_t color, double falloff, double fuzz)```  
-	loc is the same as material_init.  
-	color is the same as material_init.  
-	falloff is the same as material_init.  
-	fuzz is the "fuzz" factor of the specular material.  
+	- loc is the same as material_init.  
+	- color is the same as material_init.  
+	- falloff is the same as material_init.  
+	- fuzz is the "fuzz" factor of the specular material.  
   
 Signature for material_init_specular: ```material* material_init_dielectric (void* loc, uint32_t color, double falloff, double refractive_index)```  
-	loc is the same as material_init.  
-	color is the same as material_init.  
-	falloff is the same as material_init.  
-	refractive_index is the refractive index of the material.  
+	- loc is the same as material_init.  
+	- color is the same as material_init.  
+	- falloff is the same as material_init.  
+	- refractive_index is the refractive index of the material.  
   
 To create a sphere, use sphere_init. It returns a pointer to a scene_obj_sphere struct.  
   
 Signature for sphere_init: ```scene_obj_sphere* sphere_init (void* loc, material* mat, v3* pos, double radius)```  
-	loc is the pointer to initialize the sphere at.  
-	mat is the material to use.  
-	pos is the location of the center of the sphere.  
-	radius is the radius of the sphere.  
+	- loc is the pointer to initialize the sphere at.  
+	- mat is the material to use.  
+	- pos is the location of the center of the sphere.  
+	- radius is the radius of the sphere.  
   
   
 To create a triangle, use scene_tri_init. It returns a pointer to a scene_obj_tri struct.  
   
 Signature for scene_tri_init: ```scene_obj_tri* scene_tri_init (void* loc, material* mat, tri* geom)```  
-	loc is the pointer to initialize the triangle at.  
-	mat is the material to use.  
-	geom is a pointer to the tri struct containing the verticies to use.  
+	- loc is the pointer to initialize the triangle at.  
+	- mat is the material to use.  
+	- geom is a pointer to the tri struct containing the verticies to use.  
 To make a tri struct:  
 	create 3 verticies (v3) using either initv3 or newv3. Pass them to newtri, which returns a tri*.  
 Signature for newtri: ```tri* newtri (v3* a, v3* b, v3* c)```  
